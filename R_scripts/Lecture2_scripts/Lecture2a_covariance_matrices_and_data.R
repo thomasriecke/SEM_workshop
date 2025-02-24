@@ -110,6 +110,7 @@ summary(path1)
 
 # Calculating the relationship between y and x
 V[1,2]/V[1,1]
+R[1,2] * sqrt(V[2,2]/V[1,1])
 summary(path1)$coefficients$Estimate[1]
 
 # Calculating the relationship between z and y
