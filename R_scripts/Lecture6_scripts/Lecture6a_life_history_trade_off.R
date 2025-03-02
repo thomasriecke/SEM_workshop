@@ -264,7 +264,7 @@ nb <- 10000
 
 
 # Call JAGS from R 
-# 20k iterations takes awhile on an i9
+# 20k iterations takes ~10m on an i9
 library(jagsUI)
 Sys.time()
 m <- jags(jags.data, inits, parameters, "our_first_latent_variable.jags", parallel = T, 
@@ -272,6 +272,10 @@ m <- jags(jags.data, inits, parameters, "our_first_latent_variable.jags", parall
 Sys.time()
 
 print(m)
+
+
+vioplot::vioplot(m$sims.list$alpha)
+vioplot::vioplot(m$sims.list$beta[,2])
 
 
 
