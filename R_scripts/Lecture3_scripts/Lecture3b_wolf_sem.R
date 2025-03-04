@@ -4,7 +4,7 @@
 library(piecewiseSEM)
 library(latex2exp)
 library(semEff)
-
+library(lavaan)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # plotting
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,7 +93,7 @@ plot(jitter(dat$z.deer) ~ jitter(dat$z.elk), las = 1, cex.lab = 1.25,
 #
 # we also derive the total effect of elevation acting via deer
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-model <- "ung =~ z.elk + z.deer + z.moose + z.sheep + z.goat
+model <- "ung =~ z.elk + z.deer + z.moose
           ung ~ b * z.elev
           used ~ a * ung + c * z.elev
           total := a * b + c
